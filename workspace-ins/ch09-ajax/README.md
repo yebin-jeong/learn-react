@@ -1,5 +1,5 @@
 # 9장 HTTP 통신과 Ajax
-* 코드 실행(GitHub Page): <https://uzoolove.github.io/febc11-react/workspace-ins/index.html#09>
+* 코드 실행(GitHub Page): <https://github.com/FEBC-13/React/workspace-ins/index.html#09>
 
 ## HTTP
 
