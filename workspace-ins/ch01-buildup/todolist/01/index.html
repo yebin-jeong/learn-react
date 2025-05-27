@@ -80,87 +80,33 @@
 
     // 한건의 Todo 객체를 받아서 DOM 객체로 만들어 반환
     function getTodoItemElem(item){
-      // return (`
-      //   <li data-num="2">
-      //     <span>1</span>
-      //     <span onclick="toggleDone(1)"><s>샘플1</s></span>
-      //     <button type="button" onclick="deleteItem(1)">삭제</button>
-      //   </li>
-      // `);
-
-      /* 엘리먼트 노드 생성 */
-      // <li></li> 생성
       const liElem = document.createElement('li');
-
-      // <span></span> 생성
       const numSpan = document.createElement('span');
-
-      // <span></span> 생성
       const titleSpan = document.createElement('span');
-
-      // <button></button> 생성
       const deleteBtn = document.createElement('button');
 
-
-      /* 텍스트 노드 생성 */
-      // "4" 생성
-      const numTxt = document.createTextNode(4);
-      
-      // "React 프로젝트" 생성
-      const titleTxt = document.createTextNode('React 프로젝트');
-
-      // "삭제" 생성
+      const numTxt = document.createTextNode(item.num);
+      const titleTxt = document.createTextNode(item.title);
       const deleteTxt = document.createTextNode('삭제');
 
-
-      /* 엘리먼트 노드에 텍스트 노드 추가 */
-      // <span>4</span>
       numSpan.appendChild(numTxt);
-
-      // 완료 여부에 따라서 <span>React 프로젝트</span> 또는 <span><s>React 프로젝트</s></span>
       if(item.done){
-        // <span><s>React 프로젝트</s></span>
         const sElem = document.createElement('s');
         titleSpan.appendChild(sElem);
         sElem.appendChild(titleTxt);
       }else{
-        // <span>React 프로젝트</span>
         titleSpan.appendChild(titleTxt);
       }
-
-      // <button>삭제</button>
       deleteBtn.appendChild(deleteTxt);
 
-
-      /* 엘리먼트 노드에 속성 추가 */
-      // <li data-num="4"></li>
-      liElem.dataset.num = 4;
-
-      // <span onclick="toggleDone(4)">React 프로젝트</span>
-      titleSpan.setAttribute('onclick', 'toggleDone(4)');
-      
-      // <button type="button">삭제</button>
+      liElem.dataset.num = item.num;
+      titleSpan.setAttribute('onclick', `toggleDone(${item.num})`);
       deleteBtn.setAttribute('type', 'button');
+      deleteBtn.setAttribute('onclick', `deleteItem(${item.num})`);
 
-      // <button type="button" onclick="deleteItem(4)">삭제</button>
-      deleteBtn.setAttribute('onclick', 'deleteItem(4)');
-      
-      /* 엘리먼트 노드 조립 */
-      // <li data-num="4">
-      //   <span>4</span>
-      // </li>
-
-      // <li data-num="4">
-      //   <span>4</span>
-      //   <span onclick="toggleDone(4)">React 프로젝트</span>
-      // </li>
-
-      // <li data-num="4">
-      //   <span>4</span>
-      //   <span onclick="toggleDone(4)">React 프로젝트</span>
-      //   <button type="button" onclick="deleteItem(4)">삭제</button>
-      // </li>
-
+      liElem.appendChild(numSpan);
+      liElem.appendChild(titleSpan);
+      liElem.appendChild(deleteBtn);
 
       // li 노드 반환
       return liElem;
@@ -202,7 +148,7 @@
 
     // 할일 삭제
     function deleteItem(num){
-      console.log('할일 삭제');
+      console.log(num, '할일 삭제');
       // 데이터 갱신, itemList에서 num에 해당하는 item 삭제
 
       // 화면 갱신, 화면에서 num에 해당하는 item 제거
