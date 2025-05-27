@@ -64,11 +64,11 @@ const add10 = function(x) {
   return x + 10;
 };
 // 화살표 함수
-const add = (x) => {
+const add10 = (x) => {
   return x + 10;
 }
 // 화살표 함수 매개변수의 괄호와 본문의 중괄호 생략
-const add = x => x + 10;
+const add10 = x => x + 10;
 ```
 
 ## 2.2 구조 분해 할당 (Destructuring assignment)
