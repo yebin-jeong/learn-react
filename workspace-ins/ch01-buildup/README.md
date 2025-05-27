@@ -232,8 +232,8 @@ MyMath.minus(2, 3);
 ```ts
 new Promise<T>(
   executor: (
-  resolve: (value: T) => void,
-  reject: (reason?: any) => void
+    resolve: (value: T) => void,
+    reject: (reason?: any) => void
   ) => void
 )
 ```
