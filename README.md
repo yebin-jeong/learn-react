@@ -147,14 +147,14 @@
 #### 오전(3시간)
 * 🧑‍💻 [개발 환경 구축](./README.md#2-개발-환경-구축)
 * 🔊 [1장 리액트 빌드업](./workspace-ins/ch01-buildup)
-  - 1. 웹 개발의 변천사
-  - 2. 리액트 개발에 자주 사용하는 자바스크립트 문법
+  - 🔊 [1. 웹 개발의 변천사](./workspace-ins/ch01-buildup#1%EC%9E%A5-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%B9%8C%EB%93%9C%EC%97%85)
+  - 🔊 [2. 리액트 개발에 자주 사용하는 자바스크립트 문법](./workspace-ins/ch01-buildup#2-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%97%90-%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95)
 
 #### 오후(3시간)
-* 01 전통적인 방식의 Todo List 테스트(서버에서 완성된 HTML 응답) 
+* 🧑‍💻 01 전통적인 방식의 Todo List 테스트(서버에서 완성된 HTML 응답) 
   - 🧑‍💻 [01 Todo List](https://todo.fesp.shop)
-* 02 SPA(Single Page Application)
-* Todo List 작성(HTML + vanillaJS)
+* 🧑‍💻 02 SPA(Single Page Application)
+* 🧑‍💻 Todo List 작성(HTML + vanillaJS)
   - 🧑‍💻 [01 목록 조회](./workspace-ins/ch01-buildup/todolist/01/index.html)
     - workspace/ch01-buildup/todolist/sample 폴더 복사해서 01 폴더 생성
   - 🧑‍💻 [02 등록](./workspace-ins/ch01-buildup/02/index.html)
