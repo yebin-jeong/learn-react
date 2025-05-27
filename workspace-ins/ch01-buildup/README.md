@@ -349,7 +349,7 @@ async function test(){
     console.log('p2의 작업 결과.', result3);
     const result4 = await a2();
     console.log('a2의 작업 결과.', result4);
-    } catch(error) {
+  } catch(error) {
     console.log('에러 발생.', error);
   }
 }
