@@ -154,13 +154,13 @@
 * 🧑‍💻 01 전통적인 방식의 Todo List 테스트(서버에서 완성된 HTML 응답) 
   - 🧑‍💻 [01 Todo List](https://todo.fesp.shop)
 * 🧑‍💻 02 SPA(Single Page Application)
-* 🧑‍💻 Todo List 작성(HTML + vanillaJS)
-  - 🧑‍💻 [01 목록 조회](./workspace-ins/ch01-buildup/todolist/01/index.html)
-    - workspace/ch01-buildup/todolist/sample 폴더 복사해서 01 폴더 생성
-  - 🧑‍💻 [02 등록](./workspace-ins/ch01-buildup/todolist/02/index.html)
-    - workspace/ch01-buildup/todolist/01 폴더 todolist/복사해서 02 폴더 생성
-  - 🧑‍💻 [03 수정](./workspace-ins/ch01-buildup/todolist/03/index.html)
-    - workspace/ch01-buildup/todolist/02 폴더 복사해서 03 폴더 생성
+  * 🧑‍💻 Todo List 작성(HTML + vanillaJS)
+    - 🧑‍💻 [01 목록 조회](./workspace-ins/ch01-buildup/todolist/01/index.html)
+      - workspace/ch01-buildup/todolist/sample 폴더 복사해서 01 폴더 생성
+    - 🧑‍💻 [02 등록](./workspace-ins/ch01-buildup/todolist/02/index.html)
+      - workspace/ch01-buildup/todolist/01 폴더 todolist/복사해서 02 폴더 생성
+    - 🧑‍💻 [03 수정](./workspace-ins/ch01-buildup/todolist/03/index.html)
+      - workspace/ch01-buildup/todolist/02 폴더 복사해서 03 폴더 생성
 
 # 5. 참고 사이트
 
