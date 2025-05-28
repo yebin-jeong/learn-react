@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Counter</title>
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
 </head>
 <body>
   <div id="app">
     <header>
-      <h1>Counter - React Sample</h1>
+      <h1>Counter - 01 HTML + JS</h1>
       <p>파일 경로: <span id="filepath"></span></p>
     </header>
     <div id="counter">
@@ -25,31 +21,33 @@
 
   <script>
     document.querySelector('#filepath').textContent = `ch${document.URL.split('/ch')[1]}index.html`;
+  </script>
 
+  <script>
     let count = 0;
 
     // 카운터 감소
     const handleDown = () => {
       // 데이터 갱신, count 값 감소
-
+      count--;
       // 화면 갱신, count 값 화면에 표시
-
+      document.querySelector('#counter > span').textContent = count;
     };
 
     // 카운터 증가
     const handleUp = () => {
       // 데이터 갱신, count 값 증가
-
+      count++;
       // 화면 갱신, count 값 화면에 표시
-
+      document.querySelector('#counter > span').textContent = count;
     };
 
     // 카운터 초기화
     const handleReset = event => {
       // 데이터 갱신, count 값 초기화
-
+      count = 0;
       // 화면 갱신, count 값 화면에 표시
-      
+      document.querySelector('#counter > span').textContent = count;
     };
   </script>
 
