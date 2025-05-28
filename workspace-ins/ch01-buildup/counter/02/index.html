@@ -59,7 +59,7 @@
     resetBtn.setAttribute('type', 'button');
     resetBtn.setAttribute('onclick', 'handleReset()');
     const resetBtnTxt = document.createTextNode('0');
-    resetBtn.appendChild(resetBtn);
+    resetBtn.appendChild(resetBtnTxt);
 
     // <button type="button" onclick="handleUp()">+</button>
     const upBtn = document.createElement('button');
@@ -69,10 +69,17 @@
     upBtn.appendChild(upBtnTxt);
 
     // <span>0</span>
+    const span = document.createElement('span');
+    const spanTxt = document.createTextNode('0');
+    span.appendChild(spanTxt);
+
     // <div id="counter">
     const Counter = document.createElement('div');
     Counter.setAttribute('id', 'counter');
     Counter.appendChild(downBtn);
+    Counter.appendChild(resetBtn);
+    Counter.appendChild(upBtn);
+    Counter.appendChild(span);
 
     /* app 구성 */
     // <div id="app">
