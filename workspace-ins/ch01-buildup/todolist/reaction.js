@@ -29,7 +29,6 @@ const reaction = {
       }else{
         elem.appendChild(child);
       }
-      elem.appendChild(child);
     }
     // 요소 노드 반환
     return elem;
