@@ -91,6 +91,7 @@
       // 할일 추가
       function addItem(title){
         console.log('할일 추가');
+        const newItemList = [ ...itemList ];
         // 데이터 갱신, itemList에 item 추가
         // num, title, done 속성을 가진 item 객체 생성
         const item = {
@@ -98,9 +99,9 @@
           title,
           done: false,
         };
-        itemList.push(item);
+        newItemList.push(item);
 
-        setItemList(itemList);
+        setItemList(newItemList);
       }
 
       // 추가 버튼 클릭 이벤트 핸들러
@@ -144,7 +145,7 @@
       return (
         Reaction.createElement('div', { id: 'todo' }, 
           Header,
-          Todo({ handleAdd, handleAddKeydown, itemList, addItem, toggleDone, deleteItem }),
+          Todo({ itemList, addItem, toggleDone, deleteItem, handleAdd, handleAddKeydown }),
           Footer
         )
       );
