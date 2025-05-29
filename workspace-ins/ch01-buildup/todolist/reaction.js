@@ -23,6 +23,12 @@ const reaction = {
       }else if(typeof child === 'function'){
         child = child();
       }
+
+      if(Array.isArray(child)){
+        child.forEach(c => elem.appendChild(c));
+      }else{
+        elem.appendChild(child);
+      }
       elem.appendChild(child);
     }
     // 요소 노드 반환
