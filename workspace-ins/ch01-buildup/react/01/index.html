@@ -10,22 +10,7 @@
   <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
 </head>
 <body>
-  <div id="app">
-    <header>
-      <h1>01 Counter - React로 구현(React.createElement)</h1>
-      <p>파일 경로: <span id="filepath"></span></p>
-    </header>
-    <div id="counter">
-      <button type="button" onclick="handleDown()">-</button>
-      <button type="button" onclick="handleReset(event)">0</button>
-      <button type="button" onclick="handleUp()">+</button>
-      <span>0</span>
-    </div>
-  </div>
-
-  <script>
-    document.querySelector('#filepath').textContent = `ch${document.URL.split('/ch')[1]}index.html`;
-  </script>
+  <div id="root"></div>
 
   <script type="module">
     
@@ -34,7 +19,7 @@
       console.log('\tHeader 호출됨');
       return (
         React.createElement('header', null, 
-          React.createElement('h1', null, 'Counter - 07. 데이터(상태) 변경시 자동으로 UI 리렌더링'), 
+          React.createElement('h1', null, '01 Counter - React로 구현(React.createElement)'), 
           React.createElement('p', null, '파일 경로: ', 
             React.createElement('span', { id: 'filepath' }, `ch${document.URL.split('/ch')[1]}index.html`)))
       );
@@ -66,9 +51,9 @@
 
       return (
         React.createElement('div', { id: 'counter' }, 
-          React.createElement('button', { type: 'button', onclick: handleDown }, '-'), 
-          React.createElement('button', { type: 'button', onclick: (event) => handleReset(event) }, 0), 
-          React.createElement('button', { type: 'button', onclick: handleUp }, '+'), 
+          React.createElement('button', { type: 'button', onClick: handleDown }, '-'), 
+          React.createElement('button', { type: 'button', onClick: (event) => handleReset(event) }, 0), 
+          React.createElement('button', { type: 'button', onClick: handleUp }, '+'), 
           React.createElement('span', null, count))
       );
     }
@@ -77,12 +62,15 @@
     function App(){
       console.log('App 호출됨');
       return (
-        React.createElement('div', { id: 'app' }, Header, Counter)
+        React.createElement('div', { id: 'app' }, 
+          React.createElement(Header), 
+          React.createElement(Counter)
+        )
       );
     }
 
     // root 요소에 app 추가
-    React.createRoot(document.getElementById('root')).render(App);
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
   </script>
 
 </body>
