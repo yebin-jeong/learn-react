@@ -65,17 +65,18 @@
       );
     }
 
-    function TodoItem({ item }){
+    function TodoItem({ item, toggleDone, deleteItem }){
       return (
         Reaction.createElement('li', { 'data-num': item.num },
           Reaction.createElement('span', null, item.num),
-          Reaction.createElement('span', null, Reaction.createElement('s', null, item.title)),
-          Reaction.createElement('button', { type: 'button' }, '삭제'))
+          Reaction.createElement('span', { onclick: () => toggleDone(item.num) }, 
+            item.done ? Reaction.createElement('s', null, item.title) : item.title),
+          Reaction.createElement('button', { type: 'button', onclick: () => deleteItem(item.num) }, '삭제'))
       );
     }
 
-    function TodoList({ itemList }){
-      const items = itemList.map(item => TodoItem({ item }));
+    function TodoList({ itemList, toggleDone, deleteItem }){
+      const items = itemList.map(item => TodoItem({ item, toggleDone, deleteItem }));
       return (
         Reaction.createElement('ul', { class: 'todolist' }, items)
       );
@@ -115,22 +116,16 @@
       // 완료/미완료 처리
       function toggleDone(num){
         console.log(num, '완료/미완료');
-        // 데이터 갱신, itemList에서 num에 해당하는 item의 done 값을 수정
-        const selectedItem = itemList.find(item => item.num === num);
-        // item의 done 값을 수정
-        selectedItem.done = !selectedItem.done;
+        const newItemList = itemList.map(item => item.num === num ? { ...item, done: !item.done } : item);
 
-        render(); // 데이터를 기반으로 화면 갱신
+        setItemList(newItemList);
       }
 
       // 할일 삭제
       function deleteItem(num){
         console.log(num, '할일 삭제');
-        // 데이터 갱신, itemList에서 num에 해당하는 item 삭제
-        const index = itemList.findIndex(item => item.num === num);
-        itemList.splice(index, 1);
-        
-        render(); // 데이터를 기반으로 화면 갱신
+        const newItemList = itemList.filter(item => item.num !== num);
+        setItemList(newItemList);
       }
 
       return (
