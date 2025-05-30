@@ -104,12 +104,10 @@
 
       const [itemList, setItemList] = Reaction.useState(initItemList);
 
-      let lastNum = itemList.length;
-
       // 할일 추가
       function addItem(title){
         console.log('할일 추가');
-        const item = { num: ++lastNum, title, done: false };
+        const item = { num: itemList[itemList.length-1].num + 1, title, done: false };
         setItemList([ ...itemList, item ]);
       }
 
