@@ -41,10 +41,27 @@
     }
 
     function TodoInput(props){
+      // 추가 버튼 클릭 이벤트 핸들러
+      const handleAdd = () => {
+        console.log('추가 버튼 클릭');
+        const inputElem = document.querySelector('.todoinput > input');
+        if(inputElem.value.trim() !== ''){
+          props.addItem(inputElem.value.trim());
+          inputElem.value = '';
+          inputElem.focus();
+        }
+      };
+
+      // 엔터 이벤트 핸들러
+      const handleAddKeydown = (event) => {
+        console.log('keydown', event);
+        if(event.key === 'Enter') handleAdd();
+      };
+
       return (
         Reaction.createElement('div', { class: 'todoinput' },
-          Reaction.createElement('input', { type: 'text', autofocus: true, onkeydown: (event) => props.handleAddKeydown(event) }),
-          Reaction.createElement('button', { type: 'button', onclick: props.handleAdd }, '추가'))
+          Reaction.createElement('input', { type: 'text', autofocus: true, onkeydown: (event) => handleAddKeydown(event) }),
+          Reaction.createElement('button', { type: 'button', onclick: handleAdd }, '추가'))
       );
     }
 
@@ -91,35 +108,9 @@
       // 할일 추가
       function addItem(title){
         console.log('할일 추가');
-        const newItemList = [ ...itemList ];
-        // 데이터 갱신, itemList에 item 추가
-        // num, title, done 속성을 가진 item 객체 생성
-        const item = {
-          num: ++lastNum,
-          title,
-          done: false,
-        };
-        newItemList.push(item);
-
-        setItemList(newItemList);
+        const item = { num: ++lastNum, title, done: false };
+        setItemList([ ...itemList, item ]);
       }
-
-      // 추가 버튼 클릭 이벤트 핸들러
-      const handleAdd = () => {
-        console.log('추가 버튼 클릭');
-        const inputElem = document.querySelector('.todoinput > input');
-        if(inputElem.value.trim() !== ''){
-          addItem(inputElem.value.trim());
-          inputElem.value = '';
-          inputElem.focus();
-        }
-      };
-
-      // 엔터 이벤트 핸들러
-      const handleAddKeydown = (event) => {
-        console.log('keydown', event);
-        if(event.key === 'Enter') handleAdd();
-      };
 
       // 완료/미완료 처리
       function toggleDone(num){
@@ -145,7 +136,7 @@
       return (
         Reaction.createElement('div', { id: 'todo' }, 
           Header,
-          Todo({ itemList, addItem, toggleDone, deleteItem, handleAdd, handleAddKeydown }),
+          Todo({ itemList, addItem, toggleDone, deleteItem }),
           Footer
         )
       );
