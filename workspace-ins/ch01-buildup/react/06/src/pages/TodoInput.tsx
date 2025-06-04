@@ -12,13 +12,16 @@ function TodoInput({ addItem }: TodoInputProps){
   // 추가 버튼 클릭 이벤트 핸들러
   const handleAdd = () => {
     console.log('추가 버튼 클릭');
-    addItem(title);
-    setTitle('');
+    if(title.trim() !== ''){
+      addItem(title);
+      setTitle('');
+    }
   };
 
   // 엔터 이벤트 핸들러
   const handleAddKeydown = (event: KeyboardEvent) => {
     console.log('keydown', event);
+    if(event.nativeEvent.isComposing) return; // 글자가 완성되지 않았을 경우 무시한다.(Mac 사용자)
     if(event.key === 'Enter') handleAdd();
   };
 
