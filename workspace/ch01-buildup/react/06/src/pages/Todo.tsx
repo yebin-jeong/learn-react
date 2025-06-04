@@ -1,10 +1,11 @@
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
+import type { TodoItem } from "./TodoItem";
 import React from "react";
 
 function Todo() {
   // 샘플 목록
-  const initItemList = [
+  const initItemList: TodoItem[] = [
     { num: 1, title: "자바스크립트 공부", done: true },
     { num: 2, title: "JS 프로젝트", done: true },
     { num: 3, title: "React 공부", done: false },
@@ -15,7 +16,7 @@ function Todo() {
   const [itemList, setItemList] = React.useState(initItemList);
 
   // 할일 추가
-  function addItem(title) {
+  function addItem(title: string) {
     console.log("할일 추가");
     // 데이터 갱신, itemList에 item 추가
     // num, title, done 속성을 가진 item 객체 생성
@@ -28,7 +29,7 @@ function Todo() {
   }
 
   // 완료/미완료 처리
-  function toggleDone(num) {
+  function toggleDone(num: number) {
     console.log(num, "완료/미완료");
     // 데이터 갱신, itemList에서 num에 해당하는 item의 done 값을 수정
     // 객체의 불변성을 위해서
@@ -43,7 +44,7 @@ function Todo() {
   }
 
   // 할일 삭제
-  function deleteItem(num) {
+  function deleteItem(num: number) {
     console.log(num, "할일 삭제");
     // 데이터 갱신, itemList에서 num에 해당하는 item 삭제
     const newItemList = itemList.filter((item) => item.num !== num);
