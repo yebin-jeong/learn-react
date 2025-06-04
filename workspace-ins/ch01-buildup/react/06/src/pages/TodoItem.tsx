@@ -1,4 +1,16 @@
-function TodoItem({ item, toggleDone, deleteItem }){
+export interface TodoItem {
+  num: number;
+  title: string;
+  done: boolean;
+}
+
+interface TodoItemProps {
+  item: TodoItem;
+  toggleDone: (num: number) => void;
+  deleteItem: (num: number) => void;
+}
+
+function TodoItem({ item, toggleDone, deleteItem }: TodoItemProps){
   console.log(item.num, '리렌더링.');
   return (
     <li>
