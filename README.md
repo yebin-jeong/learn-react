@@ -156,11 +156,11 @@
 * 02 SPA(Single Page Application)
   * Todo List 작성(HTML + vanillaJS)
     - 🧑‍💻 [01 목록 조회](./workspace-ins/ch01-buildup/todolist/01/index.html)
-      - workspace/ch01-buildup/todolist/sample 폴더 복사해서 01 폴더 생성
+      + workspace/ch01-buildup/todolist/sample 폴더 복사해서 01 폴더 생성
     - 🧑‍💻 [02 등록](./workspace-ins/ch01-buildup/todolist/02/index.html)
-      - workspace/ch01-buildup/todolist/01 폴더 todolist/복사해서 02 폴더 생성
+      + workspace/ch01-buildup/todolist/01 폴더 복사해서 02 폴더 생성
     - 🧑‍💻 [03 수정](./workspace-ins/ch01-buildup/todolist/03/index.html)
-      - workspace/ch01-buildup/todolist/02 폴더 복사해서 03 폴더 생성
+      + workspace/ch01-buildup/todolist/02 폴더 복사해서 03 폴더 생성
 
 ### 2일차(2025.05.28 수)
 #### 오전(3시간)
@@ -201,6 +201,39 @@
     - 🧑‍💻 [06 Reaction.createElement() 사용해서 UI 구성](./workspace-ins/ch01-buildup/todolist/06/index.html)
     - 🧑‍💻 [07 UI 구성 요소별 각각의 함수로 분리(컴포넌트로 만들기)](./workspace-ins/ch01-buildup/todolist/07/index.html)
       - workspace/ch01-buildup/todolist/06 폴더 복사해서 07 폴더 생성 
+
+### 4일차(2025.05.30 금)
+#### 오전(3시간)
+* 02 SPA(Single Page Application)
+  * Todo List 작성(vanillaJS + Lib)
+    - 🧑‍💻 [08 상태(데이터) 변경시 화면 리렌더링](./workspace-ins/ch01-buildup/todolist/08/index.html)
+      - workspace/ch01-buildup/todolist/07 폴더 복사해서 08 폴더 생성
+
+#### 오후(3시간)
+* 03 React
+  - 🧑‍💻 [01 Counter - React로 구현(React.createElement)](./workspace-ins/ch01-buildup/react/01/index.html)
+    - workspace/ch01-buildup/react/sample/counter 폴더 복사해서 workspace/ch01-buildup/react/01 폴더 생성
+  - 🧑‍💻 [02 Counter - React로 구현(JSX)](./workspace-ins/ch01-buildup/react/02/index.html)
+    - workspace/ch01-buildup/react/01 폴더 복사해서 workspace/ch01-buildup/react/02 폴더 생성
+  - 🧑‍💻 [03 Todo List - React로 UI 구성(JSX)](./workspace-ins/ch01-buildup/react/03/index.html)
+    - workspace/ch01-buildup/react/02 폴더 복사해서 03 폴더 생성
+
+### 5일차(2025.06.02 화)
+#### 오전(3시간)
+* 03 React
+  - 🧑‍💻 [04 Todo List - React 컴포넌트 분리](./workspace-ins/ch01-buildup/react/04/index.html)
+    - workspace/ch01-buildup/react/03 폴더 복사해서 04 폴더 생성
+  - 🧑‍💻 [05 Todo List - React 기능 추가](./workspace-ins/ch01-buildup/react/05/index.html)
+    - workspace/ch01-buildup/react/04 폴더 복사해서 05 폴더 생성
+
+#### 오후(3시간)
+* 02 SPA(Single Page Application)
+  * Counter(라이브리리 개발) 작성
+    - 🧑‍💻 [08 컴포넌트를 모듈로 분리](./workspace-ins/ch01-buildup/counter/08/index.html)
+      - workspace/ch01-buildup/counter/07 폴더 복사해서 08 폴더 생성
+  * Todo List 작성(vanillaJS + Lib)
+    - 🧑‍💻 [09 컴포넌트를 모듈로 분리](./workspace-ins/ch01-buildup/todolist/09/index.html)
+      - workspace/ch01-buildup/todolist/08 폴더 복사해서 09 폴더 생성
       
 # 5. 참고 사이트
 
