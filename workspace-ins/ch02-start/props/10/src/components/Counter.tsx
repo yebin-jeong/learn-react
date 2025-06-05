@@ -25,8 +25,8 @@ function Counter(){
   return (
     <div id="counter">
       <Button color="red" onClick={ handleDown }>-_-</Button>
-      <Button onClick={ (event) => handleReset(event) }>0_0</Button>
-      <Button color="blue" onClick={ handleUp }>+_+</Button>
+      <Button type="reset" onClick={ (event) => { handleReset(event) }}>0_0</Button>
+      <Button type="submit" color="blue" onClick={ handleUp }>+_+</Button>
       <span>{ count }</span>
     </div>
   );
