@@ -78,7 +78,7 @@ function App() {
     if (Object.keys(newErrors).length > 0) {
       // 입력값 검증 실패
       setErrors(newErrors);
-      console.error(errors);
+      console.error(newErrors);
     } else {
       // 입력값 검증 통과
       setErrors({});
