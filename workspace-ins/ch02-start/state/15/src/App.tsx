@@ -76,7 +76,7 @@ function App() {
       newErrors.cellphone = { message: '휴대폰 형식에 맞지 않습니다.' };
     }
     
-    if(newErrors){  // 입력값 검증 실패
+    if(Object.keys(newErrors).length > 0){  // 입력값 검증 실패
       setErrors(newErrors);
       console.error(errors);
     }else{  // 입력값 검증 통과
