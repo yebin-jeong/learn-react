@@ -1,4 +1,4 @@
-import { Component, PureComponent } from "react";
+import { Component } from "react";
 
 interface ClickMeProps {
   level?: number;
@@ -19,7 +19,7 @@ class Parent extends Component {
   }
 }
 
-class ClickMe extends PureComponent<ClickMeProps, ClickMeState> {
+class ClickMe extends Component<ClickMeProps, ClickMeState> {
 
   // 1-1
   constructor(props: ClickMeProps) {
@@ -42,17 +42,17 @@ class ClickMe extends PureComponent<ClickMeProps, ClickMeState> {
   }
 
   // 2-2
-  // shouldComponentUpdate(nextProps: ClickMeProps, nextState: ClickMeState) {
-  //   console.log('2-2 shouldComponentUpdate 호출됨.');
-  //   console.log('\t현재값', this.props, this.state);
-  //   console.log('\t다음값', nextProps, nextState);
-  //   if(this.props.level === nextProps.level 
-  //     && this.state.count === nextState.count) {
-  //     return false; // render 호출 X
-  //   }else{
-  //     return true; // render 호출 O
-  //   }
-  // }
+  shouldComponentUpdate(nextProps: ClickMeProps, nextState: ClickMeState) {
+    console.log('2-2 shouldComponentUpdate 호출됨.');
+    console.log('\t현재값', this.props, this.state);
+    console.log('\t다음값', nextProps, nextState);
+    if(this.props.level === nextProps.level 
+      && this.state.count === nextState.count) {
+      return false; // render 호출 X
+    }else{
+      return true; // render 호출 O
+    }
+  }
 
   increase = () => {
     this.setState({ count: this.state.count + (this.props.level ?? 1) });
@@ -86,9 +86,17 @@ class ClickMe extends PureComponent<ClickMeProps, ClickMeState> {
     return 'hello';
   }
 
+  // 2-5
   componentDidUpdate(prevProps: ClickMeProps, prevState: ClickMeState, snapshot: string) {
     console.log('2-5 componentDidUpdate 호출됨.');
-    
+    console.log('\t이전값', prevProps, prevState);
+    console.log('\t현재값', this.props, this.state);
+    console.log('\tsnapshot', snapshot);
+  }
+
+  // 3-1
+  componentWillUnmount(): void {
+    console.log('3-1 componentWillUnmount');
   }
 
 }
