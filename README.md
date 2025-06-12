@@ -361,8 +361,8 @@
 
 #### 오후(3시간)
 * 🔊 [4장 리액트 훅](./workspace-ins/ch04-hooks#4장-리액트-훅)
-  - 🧑‍💻 [01 useState - 상태 관리](./workspace-ins/ch03-class/04-hooks/01-useState)
-  - 🧑‍💻 [02 useEffect - side effect 관리](./workspace-ins/ch03-class/04-hooks/02-useEffect)
+  - 🧑‍💻 [01 useState - 상태 관리](./workspace-ins/04-hooks/01-useState)
+  - 🧑‍💻 [02 useEffect - side effect 관리](./workspace-ins/04-hooks/02-useEffect)
   
 # 5. 참고 사이트
 
