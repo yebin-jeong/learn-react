@@ -13,14 +13,13 @@ function Counter({ children='1' }: CounterProps){
 
   const [ count, setCount ] = useState(0);
   const [ step, setStep ] = useState(initCount);
-
-  // TODO 2. 증감값을 입력하면 입력값만큼 증감
-  
-  // TODO 1. 1초 후에 handleUp()을 호출해서 자동으로 값 한번 증가
-  // setTimeout(() => {
-  //   handleUp();
-  // }, 1000);
-  // console.log('무한 렌더링');
+ 
+  /* TODO 1. 1초 후에 handleUp()을 호출해서 자동으로 값 한번 증가
+  setTimeout(() => {
+    handleUp();
+  }, 1000);
+  console.log('무한 렌더링');
+  */
   
   // 마운트 된 후에 한번만 실행
   useEffect(() => {
@@ -30,22 +29,31 @@ function Counter({ children='1' }: CounterProps){
     console.log('dependencies에 빈배열을 지정하면 마운트된 후에 한번만 호출됨');
   }, []);
 
-  // 마운트 된 후와 업데이트 후에 실행
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     handleUp();
-  //   }, 1000);
-  //   console.log('dependencies를 지정하지 않으면 마운트된 후와 업데이트된 후에 호출됨');
-  // });
+  /* 마운트 된 후와 업데이트 후에 실행
+  useEffect(() => {
+    setTimeout(() => {
+      handleUp();
+    }, 1000);
+    console.log('dependencies를 지정하지 않으면 마운트된 후와 업데이트된 후에 호출됨');
+  });
+  */
+
+  // TODO 2. 증감치가 수정되면 1초 후에 증감치 만큼 1회 자동 증가(handleUp() 호출)
+  useEffect(() => {
+    setTimeout(() => {
+      handleUp();
+    }, 1000);
+    console.log(step, 'dependencies에 값을 지정하면 컴포넌트가 업데이트 될 때 지정한 값중 하나라도 수정되었을 경우 호출됨');
+  }, [step]);
 
   // 카운터 감소
   const handleDown = () => {
-    setCount(count - 1);
+    setCount(count - step);
   };
 
   // 카운터 증가
   const handleUp = () => {
-    setCount(count + 1);
+    setCount(count + step);
   };
 
   // 카운터 초기화
