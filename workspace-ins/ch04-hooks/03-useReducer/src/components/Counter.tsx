@@ -32,7 +32,7 @@ function Counter({ children='0' }: CounterProps){
         onChange={ handleStepChange } 
       />
       <Button color="red" onClick={ () => countDispatch({ type: 'DOWN', value: step }) }>-_-</Button>
-      <Button type="reset" onClick={ () => countDispatch({ type: 'RESET', value: step }) }>0_0</Button>
+      <Button type="reset" onClick={ () => countDispatch({ type: 'RESET', value: initCount }) }>0_0</Button>
       <Button type="submit" color="blue" onClick={ () => countDispatch({ type: 'UP', value: step }) }>+_+</Button>
       <span>{ count }</span>
     </div>
