@@ -362,18 +362,18 @@
 #### 오후(3시간)
 * 🔊 [4장 리액트 훅](./workspace-ins/ch04-hooks#4장-리액트-훅)
   - 🔊 [useState](./workspace-ins/ch04-hooks#usestate)
-    + 🧑‍💻 [01 useState - 상태 관리](./workspace-ins/04-hooks/01-useState)
+    + 🧑‍💻 [01 useState - 상태 관리](./workspace-ins/ch04-hooks/01-useState)
   - 🔊 [useEffect](./workspace-ins/ch04-hooks#useeffect)
-    + 🧑‍💻 [02 useEffect - side effect 관리](./workspace-ins/04-hooks/02-useEffect)
+    + 🧑‍💻 [02 useEffect - side effect 관리](./workspace-ins/ch04-hooks/02-useEffect)
 
 ### 11일차(2025.06.12 목)
 #### 오전(3시간)
 - 🔊 [useReducer](./workspace-ins/ch04-hooks#usereducer)
-  + 🧑‍💻 [03 useReducer - 상태 관리 로직을 한곳에](./workspace-ins/04-hooks/03-useReducer)
+  + 🧑‍💻 [03 useReducer - 상태 관리 로직을 한곳에](./workspace-ins/ch04-hooks/03-useReducer)
 
 #### 오후(3시간)
 - 🔊 [useRef](./workspace-ins/ch04-hooks#useref)
-  + 🧑‍💻 [04 useRef - 값이 유지되는 데이터 관리, DOM 엘리먼트 참조](./workspace-ins/04-hooks/04-useRef)
+  + 🧑‍💻 [04 useRef - 값이 유지되는 데이터 관리, DOM 엘리먼트 참조](./workspace-ins/ch04-hooks/04-useRef)
 
 
 # 5. 참고 사이트
