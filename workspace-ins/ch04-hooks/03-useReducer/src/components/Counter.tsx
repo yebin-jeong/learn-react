@@ -1,8 +1,13 @@
 import Button from "@components/Button";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 
 interface CounterProps {
   children: string;
+}
+
+interface CounterAction {
+  type: 'UP' | 'DOWN' | 'RESET';
+  value: number;
 }
 
 // TODO 리듀서 작성
@@ -11,9 +16,28 @@ interface CounterProps {
 // state: 이전 상태(useReducer가 내부적으로 관리, 이전의 리턴값이 다음의 state로 전달)
 // action: 동작을 정의한 객체(자유롭게 작성. 일반적으로 type 속성에 동작을, value 속성에 값을 지정)
 // 리턴값: 새로운 상태
-function counterReducer(){ // (6, { type: 'UP', value: 1 }) => 7
-  
+function counterReducer(state: number, action: CounterAction): number { // (6, { type: 'DOWN', value: 1 }) => 5
+  let newState = state;
+
+  switch(action.type){
+    case 'UP':
+      newState = state + action.value;
+      break;
+    case 'DOWN':
+      newState = state - action.value;
+      break;
+    case 'RESET':
+      newState = action.value;
+      break;
+  }
+
+  console.log(`${state} ${action.type} ${action.value} => ${newState}`);
+  return newState;
 }
+
+// console.log(counterReducer(6, { type: 'DOWN', value: 1 })); // 5
+// console.log(counterReducer(8, { type: 'UP', value: 2 })); // 10
+// console.log(counterReducer(3, { type: 'RESET', value: 5 })); // 5
 
 // Counter 컴포넌트
 function Counter({ children='0' }: CounterProps){
@@ -21,22 +45,32 @@ function Counter({ children='0' }: CounterProps){
 
   const initCount = Number(children);
 
-  const [ count, setCount ] = useState(initCount);
-  const [step, setStep] = useState(1);
+  // const [ count, setCount ] = useState(initCount);
+  const [ count, countDispatch ] = useReducer(counterReducer, initCount);
+  const [ step, setStep ] = useState(1);
 
   // 카운터 감소
   function handleDown() {
-    setCount(count - step);
+    // setCount(count - step);
+    // const newCount = counterReducer(count, { type: 'DOWN', value: step });
+    // setCount(newCount);
+    countDispatch({ type: 'DOWN', value: step });
   };
 
   // 카운터 증가
   function handleUp() {
-    setCount(count + step);
+    // setCount(count + step);
+    // const newCount = counterReducer(count, { type: 'UP', value: step });
+    // setCount(newCount);
+    countDispatch({ type: 'UP', value: step });
   };
 
   // 카운터 초기화
   function handleReset() {
-    setCount(initCount);
+    // setCount(initCount);
+    // const newCount = counterReducer(count, { type: 'RESET', value: step });
+    // setCount(newCount);
+    countDispatch({ type: 'RESET', value: step });
   };
 
   // 증감값 변경 처리
