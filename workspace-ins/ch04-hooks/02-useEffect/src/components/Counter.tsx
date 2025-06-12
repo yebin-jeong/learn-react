@@ -79,6 +79,12 @@ function Counter({ children='1' }: CounterProps){
     setCount(0);
   };
 
+  console.log('렌더링 중', document.querySelector('span')?.textContent);
+
+  useEffect(() => {
+    console.log('렌더링 후', document.querySelector('span')?.textContent);
+  });
+
   return (
     <div id="counter">
       <label htmlFor="step">증감치</label>
