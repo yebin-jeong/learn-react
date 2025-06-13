@@ -1,13 +1,13 @@
 import Footer from '@components/Footer';
 import Header from '@components/Header';
-import Todo from '@pages/Todo';
+import TodoContainer from '@pages/TodoContainer';
 
 function App(){
   console.log('App 렌더링');
   return (
     <div id="todo">
       <Header />
-      <Todo />
+      <TodoContainer />
       <Footer />
     </div>
   );
