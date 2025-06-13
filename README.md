@@ -338,6 +338,44 @@
     + workspace 폴더에서 immer 라이브러리 설치
       - `npm i immer`
 
+### 9일차(2025.06.10 화)
+#### 오전(3시간)
+* 🔊 [7. 유효성 검증](./workspace-ins/ch02-start#7-유효성-검증)
+  - 🧑‍💻 [15 회원가입 입력값 상태 관리](./workspace-ins/ch02-start/state/15)
+    + workspace/vite-template 폴더 복사해서 15 폴더 생성
+    + workspace/ch02-start/state/sample/15.html 참고해서 컴포넌트 생성
+
+#### 오후(3시간)
+  - 🧑‍💻 [16 회원가입 입력값 검증 (feat. react-hook-form)](./workspace-ins/ch02-start/state/16)
+    + workspace/ch02-start/state/15 폴더 복사해서 16 폴더 생성
+    + workspace 폴더에서 react-hook-form 라이브러리 설치
+      - `npm i react-hook-form`
+* 🔊 [3장 클래스 컴포넌트와 컴포넌트의 라이프 사이클](./workspace-ins/ch03-class)
+  - 🧑‍💻 [01 클래스 컴포넌트](./workspace-ins/ch03-class/01-classbase)
+
+### 10일차(2025.06.11 수)
+#### 오전(3시간)
+* 🔊 [3장 클래스 컴포넌트와 컴포넌트의 라이프 사이클](./workspace-ins/ch03-class#3장-클래스-컴포넌트와-컴포넌트의-라이프-사이클)
+  - 🧑‍💻 [02 클래스 컴포넌트 - 함수형 컴포넌트와 같이 사용](./workspace-ins/ch03-class/02-functionbase)
+  - 🧑‍💻 [03 클래스 컴포넌트 - 컴포넌트의 라이프 사이클](./workspace-ins/ch03-class/03-lifecycle)
+
+#### 오후(3시간)
+* 🔊 [4장 리액트 훅](./workspace-ins/ch04-hooks#4장-리액트-훅)
+  - 🔊 [useState](./workspace-ins/ch04-hooks#usestate)
+    + 🧑‍💻 [01 useState - 상태 관리](./workspace-ins/ch04-hooks/01-useState)
+  - 🔊 [useEffect](./workspace-ins/ch04-hooks#useeffect)
+    + 🧑‍💻 [02 useEffect - side effect 관리](./workspace-ins/ch04-hooks/02-useEffect)
+
+### 11일차(2025.06.12 목)
+#### 오전(3시간)
+- 🔊 [useReducer](./workspace-ins/ch04-hooks#usereducer)
+  + 🧑‍💻 [03 useReducer - 상태 관리 로직을 한곳에](./workspace-ins/ch04-hooks/03-useReducer)
+
+#### 오후(3시간)
+- 🔊 [useRef](./workspace-ins/ch04-hooks#useref)
+  + 🧑‍💻 [04 useRef - 값이 유지되는 데이터 관리, DOM 엘리먼트 참조](./workspace-ins/ch04-hooks/04-useRef)
+
+
 # 5. 참고 사이트
 
 ## 온라인 코드 편집기(HTML, CSS, JS)
