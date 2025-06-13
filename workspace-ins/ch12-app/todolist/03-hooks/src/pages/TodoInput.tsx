@@ -8,12 +8,16 @@ function TodoInput({ addItem }: TodoInputProps){
   console.log('\t\tTodoInput 렌더링');
 
   const [title, setTitle] = useState('');
+  // TODO 3. useRef를 사용해서 input 요소에 포커스가 갈수 있게 처리
+
 
   // 추가 버튼 클릭 이벤트 핸들러
   const handleAdd = () => {
     if(title.trim() !== ''){
       addItem(title);
       setTitle('');
+      // 포커스 추가
+      
     }
   };
 

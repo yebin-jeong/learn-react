@@ -1,6 +1,7 @@
 import Todo from "@pages/Todo";
 import type { TodoItem } from "@pages/TodoItem";
-import { useState } from "react";
+import todoReducer from "@pages/todoReducer";
+import { useReducer } from "react";
 
 function TodoContainer(){
   // 샘플 목록
@@ -11,24 +12,25 @@ function TodoContainer(){
   ];
 
   // 상태가 수정되면 자동으로 화면이 리렌더링 된다.
-  const [ itemList, setItemList ] = useState(initItemList);
+  const [ itemList, todoDispatch ] = useReducer(todoReducer, initItemList);
+
+  // TODO 2. useRef를 사용해서 nextId를 생성해서 할일 추가시 1씩 증가
+
 
   // 할일 추가
   const addItem = (title: string) => {
     const item: TodoItem = { _id: itemList[itemList.length-1]?._id + 1 || 1, title, done: false };
-    setItemList([ ...itemList, item ]);
+    todoDispatch({ type: 'ADD', value: item });
   }
 
   // 완료/미완료 처리
   const toggleDone = (_id: number) => {
-    const newItemList = itemList.map(item => item._id === _id ? { ...item, done: !item.done } : item);
-    setItemList(newItemList);
+    todoDispatch({ type: 'TOGGLE', value: { _id } });
   }
 
   // 할일 삭제
   const deleteItem = (_id: number) => {
-    const newItemList = itemList.filter(item => item._id !== _id );
-    setItemList(newItemList);
+    todoDispatch({ type: 'DELETE', value: { _id } });
   }
 
   return (

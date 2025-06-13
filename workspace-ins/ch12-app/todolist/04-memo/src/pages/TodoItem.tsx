@@ -10,6 +10,8 @@ interface TodoItemProps {
   deleteItem: (_id: number) => void;
 }
 
+// TODO 2. 컴포넌트 메모이제이션
+
 function TodoItem({ item, toggleDone, deleteItem }: TodoItemProps){
   console.log('\t\t\t\tTodoItem 렌더링', item);
   return (

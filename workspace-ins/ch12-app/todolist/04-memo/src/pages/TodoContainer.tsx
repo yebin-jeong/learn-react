@@ -4,6 +4,8 @@ import todoReducer from "@pages/todoReducer";
 import { useReducer, useRef } from "react";
 
 function TodoContainer(){
+  "use no memo"
+  
   // 샘플 목록
   const initItemList: TodoItem[] = [
     { _id: 1, title: '자바스크립트 공부', done: true },
@@ -21,6 +23,8 @@ function TodoContainer(){
     const item: TodoItem = { _id: nextId.current++, title, done: false };
     todoDispatch({ type: 'ADD', value: item });
   }
+
+  // TODO 1. useCallback으로 콜백 함수 메모이제이션
 
   // 완료/미완료 처리
   const toggleDone = (_id: number) => {
