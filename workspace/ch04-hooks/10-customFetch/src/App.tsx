@@ -1,7 +1,7 @@
-import useFetch from "@hooks/useFetch";
+import useAxios from "@hooks/useAxios"; // 기존 useFetch에서 useAxios로 변경
 
 function App() {
-  const { isLoading, error, data } = useFetch({ url: "/todolist?delay=1000" });
+  const { isLoading, error, data } = useAxios({ url: "/todolist?delay=1000" });
 
   console.log("App 렌더링", isLoading, error, data);
 
