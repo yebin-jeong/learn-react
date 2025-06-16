@@ -12,8 +12,8 @@ function Counter({ children='1' }: CounterProps){
   const initCount = Number(children);
 
   // TODO 커스텀 훅으로 수정
-  const [ count, setCount ] = useState(0);
-  const stepRef = useRef(initCount);
+  
+  
  
   // 카운터 감소
   const handleDown = () => {
