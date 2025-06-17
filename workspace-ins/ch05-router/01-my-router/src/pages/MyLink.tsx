@@ -11,7 +11,9 @@ function MyLink({ children, to }: MyLinkProps) {
     // History API를 사용해서 주소 변경과 히스토리에 추가
     history.pushState(null, '', to);
 
-    // 
+    // URL 변경되었음을 알리는 popstate 이벤트를 수동으로 발생
+    // APP 컴포넌트에서 이 이벤트를 감지해서 URL에 맞는 화면을 리렌더링
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   return (
