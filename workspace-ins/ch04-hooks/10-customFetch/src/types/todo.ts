@@ -3,6 +3,9 @@ export interface Todo {
   _id: number;      // Todo 아이템의 고유 식별자
   title: string;    // Todo 제목
   done: boolean;    // 완료 여부
+  content: string;  // 내용
+  createdAt: string;// 작성일
+  updatedAt: string;// 수정일
 }
 
 // Todo 목록 응답 데이터 타입 정의
