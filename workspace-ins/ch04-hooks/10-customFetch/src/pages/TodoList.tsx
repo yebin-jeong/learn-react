@@ -22,7 +22,7 @@ function TodoList() {
       {/* Todo 목록을 리스트로 렌더링 */}
       <ul>
         { data?.items.map((item) => (
-          <li key={item._id}>{item.title}</li>
+          <li key={item._id}><a href={`/todolist/${item._id}`}>{item.title}</a></li>
         )) }
       </ul>
     </>
