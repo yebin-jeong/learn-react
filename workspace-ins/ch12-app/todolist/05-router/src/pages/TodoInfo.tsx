@@ -1,5 +1,14 @@
 import { Link, Outlet, useMatch, useParams } from "react-router";
 
+export interface TodoItem {
+  _id: number;
+  title: string;
+  content?: string;
+  done: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 function TodoInfo() {
 
   // "/list/:_id" 정의된 path 값이 있을 때 
