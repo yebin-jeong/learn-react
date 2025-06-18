@@ -8,7 +8,7 @@ function Header() {
         <div>
           <ul>
             <li>
-              <NavLink className={({ isActive }) => (isActive ? "menu-dark" : "menu")} to="/home">
+              <NavLink className={({ isActive }) => (isActive ? "menu-dark" : "menu")} to="/">
                 Home
               </NavLink>
             </li>

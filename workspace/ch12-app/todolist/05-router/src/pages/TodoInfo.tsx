@@ -2,8 +2,11 @@ import { Link, Outlet, useParams } from "react-router";
 
 function TodoInfo() {
   // "/list/:_id" 정의된 path 값이 있을 때
-  // 주소창의 값이 "/list/3"일 경우 useParams()가 리턴하는 값: {_id: 3}
+  // 주소창의 값이 "/list/3" 일 경우 useParams()가 리턴하는 값: { _id: 3 }
   const { _id } = useParams();
+
+  console.log(useParams());
+
   return (
     <div id="main">
       <h2>할일 상세 보기</h2>
