@@ -1,5 +1,6 @@
 import Layout from "@components/Layout";
 import About from "@pages/About";
+import ErrorPage from "@pages/ErrorPage";
 import Home from "@pages/Home";
 import TodoAdd from "@pages/TodoAdd";
 import TodoEdit from "@pages/TodoEdit";
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
   { 
     path: '/', 
     element: <Layout />,
+    errorElement: <ErrorPage />, // 에러가 발생했을 때
     children: [
       { path: '/home', element: <Home /> },
       { path: '/about', element: <About /> },
