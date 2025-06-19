@@ -259,7 +259,7 @@ footer {
     }
 
     /* 삭제버튼 */
-    a:last-of-type {
+    button:last-of-type {
       position: relative;
       display: flex;
       gap: 0.25rem;
