@@ -37,12 +37,14 @@ function TodoList() {
   };
 
   // 삭제 처리
-  const handleDelete = () => {
-    console.log('API 서버에 삭제 요청');
+  const handleDelete = (_id: number) => {
+    console.log('API 서버에 삭제 요청', _id);
     // TODO API 서버에 삭제 요청
 
-    // TODO API 서버에 목록 요청
+    alert('삭제가 완료되었습니다.');
 
+    // TODO API 서버에 목록 요청
+    fetchTodoList();
   };
 
   useEffect(() => {
