@@ -27,10 +27,14 @@ function TodoInfo() {
 
   const fetchTodoInfo = async () => {
     console.log('API 서버에 상세 정보 요청');
-    // TODO API 서버에 상세 정보 요청
-    const res = await axiosInstance.get<{ item: TodoItem }>(`/todolist/${_id}`);
-
-    setData(res.data.item);
+    // API 서버에 상세 정보 요청
+    try{
+      const res = await axiosInstance.get<{ item: TodoItem }>(`/todolist/${_id}`);
+      setData(res.data.item);
+    }catch(err){
+      console.error(err);
+      alert('할일 조회에 실패했습니다.');
+    }
   };
 
   useEffect(() => {

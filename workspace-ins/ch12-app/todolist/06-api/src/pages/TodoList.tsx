@@ -17,22 +17,33 @@ function TodoList() {
   // 할일 목록을 API 서버에서 조회
   const fetchTodoList = async () => {
     console.log('API 서버에 목록 요청');
-    // TODO API 서버에 목록 요청
-    const res = await axiosInstance.get<TodoList>('/todolist');
-
-    // 더미 데이터로 지정
-    setData(res.data);
+    // API 서버에 목록 요청
+    try{
+      const res = await axiosInstance.get<TodoList>('/todolist');
+      setData(res.data);
+    }catch(err){
+      console.error(err);
+      alert('할일 목록 조회에 실패했습니다.');
+    }
+    
   };
 
   // 삭제 처리
-  const handleDelete = (_id: number) => {
+  const handleDelete = async (_id: number) => {
     console.log('API 서버에 삭제 요청', _id);
-    // TODO API 서버에 삭제 요청
+    
+    try{
+      // API 서버에 삭제 요청
+      await axiosInstance.delete(`/todolist/${_id}`);
 
-    alert('삭제가 완료되었습니다.');
+      alert('삭제가 완료되었습니다.');
 
-    // TODO API 서버에 목록 요청
-    fetchTodoList();
+      // API 서버에 목록 요청
+      fetchTodoList();
+    }catch(err){
+      console.error(err);
+      alert('할일 삭제에 실패했습니다.');
+    }
   };
 
   useEffect(() => {
