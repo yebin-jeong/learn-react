@@ -274,6 +274,10 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
   - Token: `{{accessToken}}`
   - Ctrl + S 눌러서 저장
 
+#### 회원 정보 수정 요청시 인증은 부모(컬렉션)에서 지정한 인증 방식으로 변경
+* Collections > Open Market API > 회원 정보 수정 > Authorization
+  - Auth Type: Inherit auth from parent
+
 # 3. Ajax
 
 ## 3.1 Ajax란?
