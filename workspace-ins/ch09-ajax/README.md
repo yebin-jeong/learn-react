@@ -177,9 +177,9 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
 * 우측 상단의 "No Environment" 또는 "Todo List" 클릭 후 `Open Market` 선택
 
 ### 2.3.4 Open Market API Collection에 API 요청 추가(상품 목록 조회)
-* Collections > Open Market API 컬렉션 위에 마우스 올린 후 `···` 클릭해서 Add request 선택
+* Collections > Open Market API 컬렉션 위에 마우스 올린 후 `···` 클릭해서 `Add request` 선택
   - "New Request" -> `상품 목록 조회`로 수정
-  - "EEnter URL or describe the request to Postbot" 항목에 `{{url}}/products` 입력 후 Send
+  - "Enter URL or describe the request to Postbot" 항목에 `{{url}}/products` 입력 후 Send
   - 응답 결과 확인
   ```json
   {
@@ -206,7 +206,7 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
 * 컬렉션내의 모든 요청에 client-id 헤더 추가
   - Collections > Open Market API 선택
   - Scripts > Pre-request 선택 후 추가
-  ```js
+  ```ts
   pm.request.headers.add({
     key: "client-id",
     value: "{{client-id}}"
@@ -249,7 +249,7 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
 
 #### 로그인 응답 결과로 받은 토큰을 환경 변수에 세팅
 * Collections > Open Market API > 로그인 > Scripts > Post-response
-  ```js
+  ```ts
   if (pm.response.code === 200) {
     const jsonData = pm.response.json();
     const accessToken = jsonData.item.token.accessToken;
@@ -286,8 +286,13 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
 - 웹 초창기부터 사용되어 구버전 브라우저에서도 동작
 
 ### 사용 예시
-```js
-function getTodoList(callback){
+```ts
+interface TodoListRes {
+  ok: boolean;
+  items: [];
+}
+
+function getTodoList(callback: (data: TodoListRes) => void){
   const xhr = new XMLHttpRequest();
   xhr.onload = () => {
     const data = xhr.responseText;
@@ -309,7 +314,7 @@ function getTodoList(callback){
   - 이러한 이유로 axios와 같은 라이브러리에 비해 사용이 다소 불편
   
 ### 3.3.1 사용 예시
-```js
+```ts
 async function getTodoList() {
   try{
     const response = await fetch('https://fesp-api.koyeb.app/todo/todolist');
@@ -332,7 +337,7 @@ async function getTodoList() {
 #### resource
 - 문자열, URL 객체, Request 객체
 * 사용 사례
-  ```js
+  ```ts
   const request = new Request('https://fesp-api.koyeb.app/todo/todolist', options);
   const response = await fetch(request);
   ```
@@ -371,7 +376,9 @@ async function getTodoList() {
 - timeout 설정 가능
 
 ### 3.4.1 사용 예시
-```js
+```ts
+import axios from "axios";
+
 async function getTodoList(){
   try{
     const response = await axios.get('https://fesp-api.koyeb.app/todo/todolist');
@@ -392,11 +399,13 @@ npm i axios
 * 지정한 url로 HTTP 요청을 보낸다.(기본 GET 방식)
 
 * 사용 사례
-  ```js
+  ```ts
+  // 할일 목록 조회
   const response = await axios('https://fesp-api.koyeb.app/todo/todolist'); 
   ```
 
-  ```js
+  ```ts
+  // 할일 등록
   const response = await axios('https://fesp-api.koyeb.app/todo/todolist', {
     method: 'post',
     data: {
@@ -406,7 +415,8 @@ npm i axios
   }); 
   ```
 
-  ```js
+  ```ts
+  // 할일 수정
   const response = await axios({
     url: 'https://fesp-api.koyeb.app/todo/todolist/1',
     method: 'patch',
@@ -417,7 +427,8 @@ npm i axios
   }); 
   ```
 
-  ```js
+  ```ts
+  // 할일 삭제
   const response = await axios.request({
     url: 'https://fesp-api.koyeb.app/todo/todolist/1',
     method: 'delete'
@@ -425,17 +436,17 @@ npm i axios
   ```
 
 #### config 객체의 주요 속성
-```js
+```ts
 {
+  // `url`이 절대값이 아닌 경우 `baseURL`이 url 앞에 붙음
+  baseURL: 'https://fesp-api.koyeb.app/todo',
+  
   // 요청에 사용될 서버 URL
   url: '/todolist',
 
   // 요청을 생성할때 사용되는 메소드
   method: 'get', // 기본값
 
-  // `url`이 절대값이 아닌 경우 `baseURL`이 url 앞에 붙음
-  baseURL: 'https://fesp-api.koyeb.app/todo',
-  
   // 사용자 지정 헤더
   headers: {'Authrization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'},
 
@@ -469,13 +480,12 @@ npm i axios
 
 #### HTTP 메소드별로 제공되는 함수
 * axios.get(url, config?)
-  ```js
+  ```ts
   const response = await axios.get('/todolist');
-  setItems(response.data.items);
   ```
 
 * axios.post(url, data, config?)
-  ```js
+  ```ts
   try{
     await axios.post('/todolist', {
       title: '할일 1',
@@ -488,27 +498,27 @@ npm i axios
   }
   ```
 
-* axios.delete(url, config?)
-  ```js
-  try{
-    await axios.delete(`/todolist/${_id}`);
-    alert('할일이 삭제 되었습니다.');
-  }catch(err){
-    console.error(err);
-    alert('할일 삭제에 실패했습니다.');
-  }
-  ```
-
 * axios.patch(url, data, config?)
-  ```js
+  ```ts
   try{
-    await axios.patch(`/todolist/${_id}`, {
+    await axios.patch(`/todolist/1`, {
       content: '수정된 내용'
     });
     alert('할일을 수정했습니다.');
   }catch(err){
     console.error(err);
     alert('할일 수정에 실패했습니다.');
+  }
+  ```
+
+* axios.delete(url, config?)
+  ```ts
+  try{
+    await axios.delete(`/todolist/1`);
+    alert('할일이 삭제 되었습니다.');
+  }catch(err){
+    console.error(err);
+    alert('할일 삭제에 실패했습니다.');
   }
   ```
 
@@ -522,7 +532,7 @@ npm i axios
 * axios.create(config?)
 
 #### 사용 예시
-```js
+```ts
 const instance = axios.create({
   baseURL: 'https://fesp-api.koyeb.app/todo', // 기본 URL
   timeout: 3000, // 지정한 시간이 지나도록 응답이 완료되지 않으면 timeout 에러 발생
@@ -544,7 +554,7 @@ instance.get('/todolist', {
 * axios로 서버에 HTTP 요청을 보내기 직전이나 응답이 도착해서 리턴되기 전에 요청과 응답을 가로채서 추가적인 작업 수행 가능
 
 #### 사용 사례
-```js
+```ts
 // 요청 인터셉터 추가하기
 axios.interceptors.request.use((config) => {
   // 요청이 전달되기 전에 필요한 공통 작업 수행
@@ -590,7 +600,7 @@ axios.interceptors.response.use((response) => {
 
 ### 3.5.2 사용 설정
 * App.jsx에 추가
-  ```jsx
+  ```tsx
   ......
   import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
   import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -620,7 +630,7 @@ axios.interceptors.response.use((response) => {
     + 서버에서 데이터가 도착하면 캐시된 데이터를 교체하고 컴포넌트를 다시 렌더링 함
 
 #### API
-```jsx
+```tsx
 useQuery(options)
 ```
 
@@ -634,7 +644,7 @@ useQuery(options)
   - 함수 내부에서 axios.get() 같은 함수의 호출 결과를(Promise) 리턴하도록 작성
 
   - 사용 예시
-  ```jsx
+  ```tsx
   // 게시물 목록 조회
   useQuery({
     queryKey: ['posts'],
@@ -699,10 +709,10 @@ useQuery(options)
 ##### invalidateQueries
 * useQuery에서 사용된 queryKey를 지정해서 해당 쿼리를 무효화 시키고 데이터를 다시 가져옴
 * 사용 예시
-  ```jsx
+  ```tsx
   const queryClient = useQueryClient();
   // 새로운 댓글 작성시 3번 게시물의 댓글 목록을 무효화 시키고 서버에서 다시 가져옴
-  queryClient.invalidateQueries({ queryKey: ['posts', 3, 'comments'] })
+  queryClient.invalidateQueries({ queryKey: ['posts', 3, 'comments'] });
   ```
 
 * 참고: https://tanstack.com/query/latest/docs/reference/QueryClient/#queryclientinvalidatequeries
@@ -728,22 +738,38 @@ useQuery(options)
 * 부모와 자식이 동일한 데이터를 요청할 경우 네트워크 요청이 중복될 수 있음
 
 ### 4.1.4 샘플 코드
-```jsx
+```tsx
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+interface PostRes {
+  ok: boolean;
+  item: {
+    _id: string;
+    title: string;
+  }
+}
+
+interface CommentsRes {
+  ok: boolean;
+  item: {
+    _id: string;
+    content: string;
+  }[];
+}
 
 // 게시글 조회 API 호출
 function fetchPost() {
   return axios.get('https://fesp-api.koyeb.app/market/posts/1?delay=3000', {
     headers: {
-      'client-id': '00-brunch'
+      'client-id': 'openmarket'
     }
   });
 }
 
 // 게시글 상세 조회 페이지
 function FetchOnRender() {
-  const [data, setData] = useState();
+  const [data, setData] = useState<PostRes>();
 
   useEffect(() => {
     fetchPost().then(res => {
@@ -765,19 +791,19 @@ function FetchOnRender() {
 
 // 댓글 목록 조회 화면
 function fetchComments() {
-  return axios.get('https://fesp-api.koyeb.app/market/posts/1/replies?delay=2000', {
+  return axios.get<CommentsRes>('https://fesp-api.koyeb.app/market/posts/1/replies?delay=2000', {
     headers: {
-      'client-id': '00-brunch'
+      'client-id': 'openmarket'
     }
   });
 }
 
 // 댓글 목록 조회 API 호출
 export function Comments() {
-  const [data, setData] = useState();
+  const [data, setData] = useState<CommentsRes>();
 
   useEffect(() => {
-    fetchComments().then(res => {
+    fetchComments().then((res) => {
       setData(res.data);
     });
   }, []);
@@ -786,7 +812,7 @@ export function Comments() {
     return <div>댓글 로딩중...</div>;
   }
 
-  const list = data.item.map((item) => <li key={item._id}>{item.content}</li>);
+  const list = data?.item.map((item) => <li key={item._id}>{item.content}</li>);
 
   return (
     <>
@@ -816,9 +842,25 @@ export default FetchOnRender;
 * 부모 컴포넌트가 자식 컴포넌트의 의존성을 모두 관리해야 하므로 복잡성이 증가
 
 ### 4.2.4 샘플 코드
-```jsx
+```tsx
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+interface PostRes {
+  ok: boolean;
+  item: {
+    _id: string;
+    title: string;
+  }
+}
+
+interface CommentsRes {
+  ok: boolean;
+  item: {
+    _id: string;
+    content: string;
+  }[];
+}
 
 // 게시글과 댓글 목록 조회를 동시에
 function fetchData(){
@@ -835,17 +877,17 @@ const promise = fetchData();
 
 // 게시글 조회 API 호출
 function fetchPost() {
-  return axios.get('https://fesp-api.koyeb.app/market/posts/1?delay=3000', {
+  return axios.get<PostRes>('https://fesp-api.koyeb.app/market/posts/1?delay=3000', {
     headers: {
-      'client-id': '00-brunch'
+      'client-id': 'openmarket'
     }
   });
 }
 
 // 게시글 상세 조회 페이지
 function FetchThenRender() {
-  const [post, setPost] = useState();
-  const [comments, setComments] = useState();
+  const [post, setPost] = useState<PostRes>();
+  const [comments, setComments] = useState<CommentsRes>();
 
   useEffect(() => {
     promise.then(res => {
@@ -861,22 +903,22 @@ function FetchThenRender() {
   return (
     <>
       <h4>{post.item.title}</h4>
-      <Comments comments={comments}/>
+      {comments && <Comments comments={comments}/>}
     </>
   );
 }
 
 // 댓글 목록 조회 화면
 function fetchComments() {
-  return axios.get('https://fesp-api.koyeb.app/market/posts/1/replies?delay=2000', {
+  return axios.get<CommentsRes>('https://fesp-api.koyeb.app/market/posts/1/replies?delay=2000', {
     headers: {
-      'client-id': '00-brunch'
+      'client-id': 'openmarket'
     }
   });
 }
 
 // 댓글 목록 조회 API 호출
-export function Comments({ comments }) {
+export function Comments({ comments }: { comments: CommentsRes }) {
   if(!comments){
     return <div>댓글 로딩중...</div>;
   }
@@ -904,7 +946,7 @@ export default FetchThenRender;
 ### 4.3.2 동작 원리(사용 방법)
 1. 비동기 통신을 사용하는 컴포넌트를 Suspense 컴포넌트로 감싼다.
 2. Suspense 컴포넌트의 fallback 속성으로 대체 UI를 지정한다.
-    ```js
+    ```ts
     <Suspense fallback={<div>로딩중...</div>}>
       <AsyncComponent />
     </Suspense>
@@ -921,18 +963,34 @@ export default FetchThenRender;
 ### 4.3.4 단점
 * Suspense 컴포넌트를 추가적으로 감싸는 부분이 복잡해 질 수 있음
 * Suspense와 함께 동작하는 비동기 로직을 직접 작성하기가 복잡해서 외부 라이브러리(React Query, SWR 등)를 사용해야 할 수 있음
-  - React 18 버전에 실험적 기능인 use() 훅으로 사용 가능
+  - React 19 버전에 추가된 use() 훅으로 사용 가능
 
 ### 4.3.5 코드 샘플
-```jsx
+```tsx
 import { useSuspenseQuery } from "@tanstack/react-query";
 import axios from "axios";
 
+interface PostRes {
+  ok: boolean;
+  item: {
+    _id: string;
+    title: string;
+  }
+}
+
+interface CommentsRes {
+  ok: boolean;
+  item: {
+    _id: string;
+    content: string;
+  }[];
+}
+
 // 게시글 조회 API 호출
 function fetchPost() {
-  return axios.get('https://fesp-api.koyeb.app/market/posts/1?delay=3000', {
+  return axios.get<PostRes>('https://fesp-api.koyeb.app/market/posts/1?delay=3000', {
     headers: {
-      'client-id': '00-brunch'
+      'client-id': 'openmarket'
     }
   });
 }
@@ -950,15 +1008,16 @@ function FetchAsYouRender() {
   return (
     <>
       <h4>{data.item.title}</h4>
+      <Comments />
     </>
   );
 }
 
 // 댓글 조회 API 호출
 function fetchComments() {
-  return axios.get('https://fesp-api.koyeb.app/market/posts/1/replies?delay=2000', {
+  return axios.get<CommentsRes>('https://fesp-api.koyeb.app/market/posts/1/replies?delay=2000', {
     headers: {
-      'client-id': '00-brunch'
+      'client-id': 'openmarket'
     }
   });
 }
@@ -971,6 +1030,7 @@ export function Comments() {
     select: res => res.data,
     staleTime: 1000*10,
   });
+  console.log(data);
   
   const list = data.item.map((item) => <li key={item._id}>{item.content}</li>);
 
