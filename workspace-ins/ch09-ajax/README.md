@@ -258,6 +258,7 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
     pm.environment.set("refreshToken", refreshToken);
   }
   ```
+* Send
 * Environments > Open Market 환경 변수에 accessToken과 refreshToken 추가 되었는지 확인
 
 #### 회원 정보 수정 요청 헤더에 토큰 인증 정보 추가
