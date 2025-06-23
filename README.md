@@ -390,6 +390,63 @@
     - 🧑‍💻 [01 기본 Todo List](./workspace-ins/ch12-app/todolist/01-basic)
     - 🧑‍💻 [02 컨테이너 컴포넌트 추가](./workspace-ins/ch12-app/todolist/02-container)
 
+### 13일차(2025.06.16 월)
+#### 오전(3시간)
+* 12장 앱 개발
+  * 12-1 Todo List
+    - 🧑‍💻 [03 useRef, useReducer로 상태 관리](./workspace-ins/ch12-app/todolist/03-hooks)
+    - 🧑‍💻 [04 React.memo, useCallback으로 메모이제이션](./workspace-ins/ch12-app/todolist/04-memo)
+* 4장 리액트 훅
+  * 🔊 [Custom Hook](./workspace-ins/ch04-hooks#custom-hook)
+    - 🧑‍💻 [08 customHook - useCounter 커스텀 훅 사용](./workspace-ins/ch12-app/todolist/08-customCounter)
+
+#### 오후(3시간)
+* 4장 리액트 훅
+  * Custom Hook
+    - 🧑‍💻 [09 customHook - 커스텀 훅 없이 fetch API 사용](./workspace-ins/ch12-app/todolist/09-fetch)
+    - 🧑‍💻 [10 customHook - useFatch, useAxios 커스텀 훅 사용](./workspace-ins/ch04-hooks/10-customFetch)
+    
+### 14일차(2025.06.17 화)
+#### 오전(3시간)
+* 4장 리액트 훅
+  * Custom Hook
+    - 🧑‍💻 [10 customHook - useFatch, useAxios 커스텀 훅 사용](./workspace-ins/ch04-hooks/10-customFetch)
+
+#### 오후(3시간)
+* 🔊 [5장 리액트 라우터](./workspace-ins/ch05-router#5장-리액트-라우터)
+  * 🔊 [1. 클라이언트 측 라우팅이란?](./workspace-ins/ch05-router#1-클라이언트-측-라우팅이란)
+    - 🧑‍💻 [01 클라이언트 라우팅 직접 구현](./workspace-ins/ch05-router/01-my-router)
+  * 🔊 [2. 리액트 라우터란?](./workspace-ins/ch05-router#2-리액트-라우터란)
+  * 🔊 [3. 리액트 라우터가 제공하는 라우터](./workspace-ins/ch05-router#3-리액트-라우터가-제공하는-라우터)
+  * 🔊 [4. 리액트 라우터가 제공하는 컴포넌트](./workspace-ins/ch05-router#4-리액트-라우터가-제공하는-컴포넌트)
+    - 🧑‍💻 [02 리액트 라우터 사용](./workspace-ins/ch05-router/02-react-router)
+    
+### 15일차(2025.06.18 수)
+#### 오전(3시간)
+* 12장 앱 개발
+  * 12-1 Todo List
+    - 🧑‍💻 [05 리액트 라우터 적용](./workspace-ins/ch12-app/todolist/05-router)
+
+#### 오후(3시간)
+* 5장 리액트 라우터
+  * 🔊 [5. 리액트 라우터가 제공하는 기능](./workspace-ins/ch05-router#5-리액트-라우터가-제공하는-기능)
+  * 🔊 [6. 리액트 라우터가 제공하는 Hook](./workspace-ins/ch05-router#6-리액트-라우터가-제공하는-hook)
+* 12장 앱 개발
+  * 12-1 Todo List
+    - 🧑‍💻 [05 리액트 라우터 적용](./workspace-ins/ch12-app/todolist/05-router)
+    
+### 16일차(2025.06.19 목)
+#### 오전(3시간)
+* 12장 앱 개발
+  * 12-1 Todo List
+    - 🧑‍💻 [05 리액트 라우터 적용](./workspace-ins/ch12-app/todolist/05-router)
+
+#### 오후(3시간)
+* 🔊 [9장 HTTP 통신과 Ajax](./workspace-ins/ch09-ajax#9장-http-통신과-ajax)
+  * 🔊 [1. HTTP](./workspace-ins/ch09-ajax#1-http)
+  * 🔊 [2. API 테스트](./workspace-ins/ch09-ajax#2-api-테스트)
+    - 🧑‍💻 [06 API 서버 연동](./workspace-ins/ch12-app/todolist/06-api)
+
 # 5. 참고 사이트
 
 ## 온라인 코드 편집기(HTML, CSS, JS)
