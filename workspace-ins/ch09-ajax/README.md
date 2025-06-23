@@ -242,7 +242,7 @@ HTTP(HyperText Transfer Protocol)는 웹 브라우저와 웹 서버 간 텍스�
 - Body > raw > "Text" -> "JSON"으로 변경. 데이터 입력 후 Send
 ```json
 {
-  "email": "u1@gmail.com",
+  "email": "u1@market.com",
   "password": "11111111"
 }
 ```
