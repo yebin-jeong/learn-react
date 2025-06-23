@@ -1,9 +1,7 @@
 import BoardInfo from "@/pages/board/BoardInfo";
 
 function App() {
-  return (
-    <BoardInfo />
-  );  
+  return <BoardInfo />;
 }
 
-export default App
+export default App;
