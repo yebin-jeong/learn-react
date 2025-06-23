@@ -1,6 +1,6 @@
 import CommentNew from "@/pages/board/CommentNew";
 
-function Comments() {
+function CommentList() {
   return (
     <>
       <h3>댓글 목록</h3>
@@ -14,4 +14,4 @@ function Comments() {
   );
 }
 
-export default Comments;
+export default CommentList;

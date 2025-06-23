@@ -1,4 +1,4 @@
-function AddComment() {
+function CommentNew() {
   return (
     <>
       <h4>댓글 등록</h4>
@@ -10,4 +10,4 @@ function AddComment() {
   );
 }
 
-export default AddComment;
+export default CommentNew;
