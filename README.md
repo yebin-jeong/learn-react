@@ -504,7 +504,7 @@
 * <https://recoiljs.org/ko>
 
 ## Zustand
-* <https://docs.pmnd.rs/zustand>
+* <https://zustand.docs.pmnd.rs>
 
 ## Redux (한국어)
 * <https://ko.redux.js.org>

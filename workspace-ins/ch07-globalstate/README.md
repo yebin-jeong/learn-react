@@ -35,15 +35,12 @@
 - 앱 전역에서 알림/메시지를 관리.
 - 읽지 않은 메시지의 수를 보여주거나, 실시간 알림 UI를 구현.
 
-### API 상태 및 캐싱
-- 서버 데이터의 로딩 상태, 성공/실패 상태를 관리.
-- 같은 데이터를 여러 컴포넌트에서 재사용(예: 프로필 데이터, 상품 리스트).
-
 ### 멀티스텝 폼 데이터
 - 여러 단계로 나뉜 폼 데이터(예: 회원가입, 주문서 작성)를 상태로 관리.
 - 각 단계의 입력값을 저장하고, 이전 단계로 돌아가도 데이터가 유지되도록 함.
 
 # 2. Redux
+* 참고: https://ko.redux.js.org
 
 ## 2.1 Redux란?
 * Redux는 JavaScript 애플리케이션의 상태를 관리하기 위한 라이브러리로, 주로 React와 함께 사용됨
@@ -360,5 +357,5 @@ npm i zustand
   export default Right3;
   ```
 
-#### Zustand 참고: <https://docs.pmnd.rs/zustand>
+#### Zustand 참고: <https://zustand.docs.pmnd.rs>
 
