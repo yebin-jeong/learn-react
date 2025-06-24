@@ -51,20 +51,26 @@ function CommentList() {
 
   const replyList = data?.map(reply => <li key={ reply._id }>{ reply.content }</li>);
 
+  let content = null;
+  if(isLoading){
+    content = <p>댓글 로딩중...</p>;
+  }else if(error){
+    content = <p>{ error.message }</p>;
+  }else if(data){
+    content = 
+      <>
+        <ul>
+          { replyList }
+        </ul>
+        <CommentNew />
+      </>;
+  }
+
   return (
     <>
       <h3>댓글 목록</h3>
 
-      { isLoading && <p>댓글 로딩중...</p> }
-      { error && <p>{ error.message }</p> }
-      { data && 
-        <>
-          <ul>
-            { replyList }
-          </ul>
-          <CommentNew />
-        </>
-      }
+      { content }
       
     </>
   );
