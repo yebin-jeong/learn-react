@@ -67,7 +67,7 @@
 * React와 함께 사용하면, 데이터 흐름을 명확히 하여 UI 컴포넌트를 더 쉽게 관리할 수 있음
 
 ### Flux 구성 요소
-![Flux 구성 요소](https://raw.githubusercontent.com/uzoolove/febc11-react/main/images/flux-won2.png)  
+![Flux 구성 요소](https://raw.githubusercontent.com/FEBC-13/React/refs/heads/main/images/flux-won2.png)  
 [그림 1. Flux 구조] 출처 "원쌤의 리액트 퀵스타트 with 타입스트립트"
 
 * **Stores**
@@ -96,7 +96,7 @@
 
 ## 2.5 Redux 구성 요소
 
-![Redux 구조](https://raw.githubusercontent.com/uzoolove/febc11-react/main/images/redux-won.png)  
+![Redux 구조](https://raw.githubusercontent.com/FEBC-13/React/refs/heads/main/images/redux-won.png)  
 [그림 2. Redux 구조] 출처 "원쌤의 리액트 퀵스타트 with 타입스크립트"
 
 * **Store**
