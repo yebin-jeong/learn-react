@@ -3,6 +3,7 @@ import type { BoardInfoType } from "@/types/BoardType";
 import { useEffect, useState } from "react";
 
 function BoardInfo() {
+  // 서버의 데이터를 저장할 상태
   const [data, setData] = useState<BoardInfoType | null>(null);
 
   // 로딩 상태
@@ -57,7 +58,7 @@ function BoardInfo() {
         <>
           <h2>{data.title}</h2>
           <p>{data.content}</p>
-          <CommentList replies={data.replies} />
+          <CommentList />
         </>
       )}
     </>
