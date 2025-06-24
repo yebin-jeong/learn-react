@@ -149,17 +149,20 @@ npm i recoil
 
 ## 3.2 RecoilRoot
 * RecoilRoot 컴포넌트 하위의 컴포넌트가 recoil을 사용할 수 있으므로 주로 루트 컴포넌트를 RecoilRoot로 감싼다.
-* App.jsx
+* main.jsx
   ```jsx
-  import { RecoilRoot } from 'recoil';
+  import { StrictMode } from 'react'
+  import { createRoot } from 'react-dom/client'
+  import App from './App.tsx'
+  import { RecoilRoot } from 'recoil'
 
-  function App() {
-    return (
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
       <RecoilRoot>
-        <MyRootComponent />
+        <App />
       </RecoilRoot>
-    );
-  }
+    </StrictMode>,
+  )
   ```
 
 ## 3.3 atom
