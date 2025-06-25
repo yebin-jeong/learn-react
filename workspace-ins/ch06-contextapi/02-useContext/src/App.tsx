@@ -7,6 +7,7 @@ import { CounterContext } from '@/contexts/CounterContext';
 function App() {
 
   useEffect(()=>{
+    // TODO count가 수정되어도 불필요한 렌더링 발생하지 않도록 CounterContext로 상태 관리 로직 이동
     console.log('# App 렌더링.');
   });
 
