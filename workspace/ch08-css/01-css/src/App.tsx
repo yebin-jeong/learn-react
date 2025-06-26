@@ -1,5 +1,6 @@
 import "./App.css";
 import Login from "@pages/auth/Login";
+import Button from "./components/ui/Button";
 
 function App() {
   return (
@@ -7,16 +8,16 @@ function App() {
       <h1 className="bg-gray-text-blue">01 바닐라 CSS</h1>
 
       <div className="container">
-        <button type="button">기본 버튼</button>
-        <button type="button" className="bg-blue-text-red">
+        <Button type="button">기본 버튼</Button>
+        <Button type="button" bg="blue" color="red">
           파란 배경의 빨간 버튼
-        </button>
-        <button type="button" className="bg-yellow-text-red">
+        </Button>
+        <Button type="button" bg="yellow" color="red">
           노란 배경의 빨간 버튼
-        </button>
-        <button type="button" className="bg-gray-text-blue">
+        </Button>
+        <Button type="button" bg="gray" color="blue">
           회색 배경의 파란 버튼
-        </button>
+        </Button>
       </div>
 
       <Login />
