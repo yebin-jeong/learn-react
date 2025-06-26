@@ -9,6 +9,7 @@ function Left3() {
 
   const count = useAtomValue(countAtom);
 
+
   return (
     <div>
       <h3>Left3</h3>
