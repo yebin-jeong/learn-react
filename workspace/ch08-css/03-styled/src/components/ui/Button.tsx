@@ -34,7 +34,6 @@ function Button({ children, variant = "basic", ...rest }: ButtonProps) {
   switch (variant) {
     case "cancel":
       return <CancelButtonStyle {...rest}>{children}</CancelButtonStyle>;
-
     case "confirm":
       return <ConfirmButtonStyle {...rest}>{children}</ConfirmButtonStyle>;
     case "basic":

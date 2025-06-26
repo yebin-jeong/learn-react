@@ -9,7 +9,7 @@ function App() {
       <Button type="button" variant="cancel">
         취소 버튼
       </Button>
-      <Button type="submit" variant="confirm">
+      <Button type="submit" bg="yellow" color="blue">
         submit 버튼
       </Button>
     </>
