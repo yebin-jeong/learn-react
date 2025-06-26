@@ -1,9 +1,11 @@
+import useCounterStore from '@/zustand/counter';
 import { useEffect } from 'react';
 
 function Right3() {
   useEffect(()=>{
     console.log('#### Right3 렌더링.');
   });
+
   return (
     <div>
       <h3>Right3</h3>
