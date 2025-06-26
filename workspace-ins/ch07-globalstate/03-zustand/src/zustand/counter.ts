@@ -5,7 +5,7 @@ interface CounterState {
   countReset: () => void;
   countDown: (step: number) => void;
   countUp: (step: number) => void;
-  getCount: () => void;
+  getCount: () => number;
 }
 
 const useCounterStore = create<CounterState>((set, get) => ({
