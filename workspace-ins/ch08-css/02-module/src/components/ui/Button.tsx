@@ -1,4 +1,4 @@
-import './Button.css';
+import styles from './Button.module.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   color?: string;

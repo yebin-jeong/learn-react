@@ -1,13 +1,13 @@
 import Button from "@/components/ui/Button";
 import Login from "@pages/auth/Login";
-import './App.css';
+import styles from './App.module.css';
 
 function App(){
   return (
     <>
-      <h1 className="bg-gray-text-blue">02 CSS Module</h1>
+      <h1 className={styles['bg-gray-text-blue']}>02 CSS Module</h1>
 
-      <div className="container">
+      <div className={styles.container}>
         <Button type="button">기본 버튼</Button>
         <Button type="button" bg="blue" color="red">파란 배경의 빨간 버튼</Button>
         <Button type="button" bg="yellow" color="red">노란 배경의 빨간 버튼</Button>
