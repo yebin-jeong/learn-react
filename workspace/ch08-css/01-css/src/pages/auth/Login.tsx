@@ -1,3 +1,5 @@
+import "./Login.css";
+
 function Login() {
   return (
     <div className="container">
@@ -17,6 +19,6 @@ function Login() {
       </form>
     </div>
   );
-};
+}
 
 export default Login;
