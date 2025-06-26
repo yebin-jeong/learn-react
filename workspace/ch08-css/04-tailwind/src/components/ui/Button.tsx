@@ -11,6 +11,9 @@ function Button({ children, bg = "gray", size = "md", ...rest }: ButtonProps) {
     yellow: "bg-yellow-500",
   };
 
+  // 번들링 시 관련 클래스가 제외될 수 있음
+  // const btnColor = `bg-${bg}-500`;
+
   const btnSize = {
     sm: "py-1 px-2 text-sm",
     md: "py-2 px-4 text-base",
