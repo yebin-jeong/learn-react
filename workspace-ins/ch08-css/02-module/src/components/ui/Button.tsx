@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
 
 function Button({ children, bg, color, ...rest }: ButtonProps){
   return (
-    <button className={`button bg-${bg}-text-${color}`} { ...rest }>{ children }</button>
+    <button className={`${styles.button} ${styles[`bg-${bg}-text-${color}`]}`} { ...rest }>{ children }</button>
   );
 }
 
