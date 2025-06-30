@@ -53,8 +53,8 @@
 ### 2.1.1 package.json 파일 작성
 #### 생성
 ```sh
-cd workspace/ch10-nextjs
-mkdir 01-manual
+cd workspace
+mkdir -p ch10-nextjs/01-manual
 cd 01-manual
 npm init -y
 ```
