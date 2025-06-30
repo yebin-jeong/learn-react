@@ -8,6 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   // 주소창의 path 값 추출
   const pathname = usePathname();
   console.log(pathname);
+  // const isActive = (path: string) => pathname.startsWith(path) ? 'cs-active' : '';
   const isActive = (path: string) => (pathname === path ? "cs-active" : "");
 
   return (
