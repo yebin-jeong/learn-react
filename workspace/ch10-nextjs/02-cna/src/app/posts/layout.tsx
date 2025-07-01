@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-1 overflow-hidden">
       <aside className="w-48 bg-gray-800 text-white p-4 lg:w-64">
