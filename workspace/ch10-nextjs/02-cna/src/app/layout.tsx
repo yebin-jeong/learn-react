@@ -33,12 +33,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </Link>
               </li>
               <li>
-                <Link href="/user/login" className={`hover:underline ${isActive("/user/login")}`}>
+                <Link href="/login" className={`hover:underline ${isActive("/login")}`}>
                   로그인
                 </Link>
               </li>
               <li>
-                <Link href="/user/signup" className={`hover:underline ${isActive("/user/signup")}`}>
+                <Link href="/signup" className={`hover:underline ${isActive("/signup")}`}>
                   회원가입
                 </Link>
               </li>
