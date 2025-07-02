@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import RegistForm from "./RegistForm";
 
 export const metadata: Metadata = {
   title: "게시글 등록",
@@ -6,5 +7,10 @@ export const metadata: Metadata = {
 };
 
 export default function NewPage() {
-  return <h1>게시글 등록</h1>;
+  return (
+    <>
+      <h1>게시글 등록</h1>
+      <RegistForm />
+    </>
+  );
 }
